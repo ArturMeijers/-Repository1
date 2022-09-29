@@ -21,7 +21,7 @@ def fly_right():
 
 
 def game_over(name):
-    print("Game over")
+    print("Game over "+ name)
 
 if __name__ == '__main__':
         fly_left()
