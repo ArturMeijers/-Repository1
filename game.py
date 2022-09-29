@@ -3,7 +3,7 @@ hp = 100
 
 def shoot(damage):
     global hp
-    hp = damage
+    hp -= damage
     print(f"You dealt damage of {damage}")
     return hp
 
