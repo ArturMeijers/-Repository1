@@ -7,4 +7,5 @@ if __name__ == '__main__':
     current_sliced = current_slicec.replace('s5432fjs24f', '')
     current_slicee = current_sliced.replace('ssw', '')
     current_slicef = current_slicee.replace('098765', '')
+    current_slicef = current_slicef.capitalize()
     print(current_slicef)
