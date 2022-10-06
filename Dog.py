@@ -3,6 +3,7 @@ class Dog:
         self.name = name
         self.age = age
 
+    @classmethod
     def Year(cls, name, year):
         return cls(name, 2022 - year)
 
