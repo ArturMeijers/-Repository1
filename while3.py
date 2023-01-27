@@ -1,8 +1,10 @@
-n = int(input("Введите число: "))
-f = "*"
+print("*")
 
-while n > 1:
-    n = str(n) + f
 
-    print(str(n))
+n = "*"
+while n < "****************":
+   n = n + "*"
+   print(n)
+
+
 
