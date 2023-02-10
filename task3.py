@@ -6,6 +6,8 @@ def replace(string):
         else:
             result += "*"
     return result
+# def replace(string):
+#     string.replace("*")
 
 string = input("Enter text: ")
 print(replace(string))
