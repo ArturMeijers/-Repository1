@@ -14,9 +14,9 @@ for character in user_sentence:
     if character.isalpha():
         Burtu_skaits = Burtu_skaits + 1
 
-# for character in user_sentence:
-#     if character.isspace():
-#         Vardu_skaits = Vardu_skaits + 1
+for character in user_sentence:
+    if character.isspace():
+        Vardu_skaits = Vardu_skaits + 1
 
 for character in user_sentence:
     if character.isnumeric():
