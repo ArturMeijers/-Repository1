@@ -1,40 +1,50 @@
-import random
+def find_letter_positions(text, letter):
+    numbers = []
+    start = 0
+    while True:
+        sub_string = text[start:]
+        index = sub_string.find(letter)
+        if index == -1:
+            break
+        numbers.append(start + index)
+        start = start + index + 1
+    return numbers
 
-# Funkcija, kas ģenerē jautājumus un atbildes
-def generate_question():
-    operations = ['+', '-', '*']
-    num1 = random.randint(1, 10)
-    num2 = random.randint(1, 10)
-    operation = random.choice(operations)
-    if operation == '+':
-        answer = num1 + num2
-    elif operation == '-':
-        answer = num1 - num2
-    else:
-        answer = num1 * num2
-    question = f"What is {num1} {operation} {num2}?"
-    return question, answer
+def replace_at_indices(text, indices, symbol):
+    new_text = ''
+    for i in range(len(text)):
+        if i in indices:
+            new_text += symbol
+        else:
+            new_text += text[i]
+    return new_text
 
-# Funkcija, kas pārbauda, vai lietotāja atbilde ir pareiza
-def check_answer(question, answer, user_answer):
-    if user_answer == str(answer):
-        print("Correct!")
-        return True
-    else:
-        print(f"Incorrect. The correct answer is {answer}.")
-        return False
+def replace(string):
+    result = ""
+    for char in string:
+        if char == " ":
+            result += " "
+        else:
+            result += "*"
+    return result
 
-# Galvenā spēles funkcija
-def play_game():
-    print("Welcome to the math quiz!")
-    num_questions = 3
-    num_correct = 0
-    for i in range(num_questions):
-        question, answer = generate_question()
-        user_answer = input(question + " ")
-        if check_answer(question, answer, user_answer):
-            num_correct += 1
-    print(f"You got {num_correct} out of {num_questions} questions correct.")
 
-# Izpilda spēles funkciju
-play_game()
+text = input('Введите текст: ')
+string = text
+print(string)
+hidden_text = replace(string)
+print(hidden_text)
+
+while '*' in hidden_text:
+    letter = input('Введите букву, которую хотите найти: ')
+    numbers = find_letter_positions(text, letter)
+    if not numbers:
+        print('Вы ввели неправильную букву, попробуйте еще раз.')
+        continue
+    replacement_symbol = letter
+    hidden_text = replace_at_indices(hidden_text, numbers, replacement_symbol)
+    print(hidden_text)
+
+print('Слово раскрыто:', hidden_text)
+
+
