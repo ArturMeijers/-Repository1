@@ -9,11 +9,11 @@ def replace_at_indices(text, indices, symbol):
 
 
 text = input("Вводите звездочки: ")
-# a = int(input("Введите первый индекс: "))
-# b = int(input("Введите второй индекс: "))
-# c = int(input("Введите третий индекс: "))
-indices_str = input("Вводите индекси как на примере - (e.g., 1,3,6): ")
-indices = []
+a = int(input("Введите первый индекс: "))
+b = int(input("Введите второй индекс: "))
+c = int(input("Введите третий индекс: "))
+# indices_str = input("Вводите индекси как на примере - (e.g., 1,3,6): ")
+indices = [a,b,c]
 symbol = input("Введите букву: ")
 
 new_text = replace_at_indices(text, indices, symbol)
