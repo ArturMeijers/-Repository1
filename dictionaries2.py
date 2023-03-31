@@ -14,10 +14,7 @@ while True:
     if ediena_nosaukums == "stop":
         break
     else:
-        
-
-milietais_edien = input("Ievadi savu mīļāko ēdienu: ")
-lietotaja_info['milakais_ediens'] = milietais_edien
+        milietais_ediens.append(ediena_nosaukums)
 
 
 lietotaja_info['milakie_edieni'] = milietais_ediens
@@ -27,4 +24,4 @@ print("Vārds: " + lietotaja_info['vards'])
 print("Uzvārds: " + lietotaja_info['uzvards'])
 # print("Mīļākie ēdieni: " + lietotaja_info['milakie_edieni'])
 print("Mīļākie ēdieni: " + ', '.join(lietotaja_info['milakie_edieni']))
-print(lietotaja_info)
+# print(lietotaja_info)
